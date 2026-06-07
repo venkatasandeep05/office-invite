@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Question 😊</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#FFDAB9;
+    padding:20px;
+}
+
+.container{
+    background:white;
+    width:100%;
+    max-width:400px;
+    border-radius:20px;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+h1{
+    color:#ff7f7f;
+    margin-bottom:15px;
+}
+
+.question{
+    font-size:22px;
+    color:#444;
+    margin-bottom:25px;
+    font-weight:bold;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+button{
+    border:none;
+    padding:12px 28px;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.yes{
+    background:#7ED957;
+    color:white;
+}
+
+.no{
+    background:#FF6B6B;
+    color:white;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.response{
+    margin-top:25px;
+    font-size:20px;
+    line-height:1.6;
+    color:#444;
+    min-height:100px;
+}
+
+.emoji{
+    font-size:60px;
+    display:block;
+    margin-bottom:10px;
+    animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✨ Just a Small Question ✨</h1>
+
+    <div class="question">
+        Are you coming to the office today?
+    </div>
+
+    <div class="buttons">
+        <button class="yes" onclick="yesAnswer()">Yes 😊</button>
+        <button class="no" onclick="noAnswer()">No 😔</button>
+    </div>
+
+    <div id="response" class="response"></div>
+
+</div>
+
+<script>
+
+function yesAnswer(){
+    document.getElementById("response").innerHTML =
+    `<span class="emoji">🥳</span>
+    Yay! Office is going to feel a little brighter today. ✨<br><br>
+    Looking forward to seeing a familiar smiling face 😊`;
+}
+
+function noAnswer(){
+    document.getElementById("response").innerHTML =
+    `<span class="emoji">🥺</span>
+    Aww... that's a little disappointing. 💔<br><br>
+    The office will definitely miss some good vibes today.<br>
+    Hope to see you soon though 😊`;
+}
+
+</script>
+
+</body>
+</html>
